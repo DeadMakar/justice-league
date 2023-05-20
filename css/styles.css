@@ -1,0 +1,50 @@
+body {
+    background-color: #000;
+    color: white;
+    font-family: "Mulish", sans-serif;
+}
+p, h1, h2, h3, ul, a, img {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    display: block;
+}
+.container{
+    width: 1600px;
+    padding: 0 80px;
+}
+header{
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-link{
+    display: flex;
+    color: #fff;
+    width: 70px;
+height: 70px;
+border: 4px solid transparent;
+background: linear-gradient(#000,#000) padding-box, linear-gradient(to right, #326CFF 0%, #26FFF2 100%) border-box;
+border-radius: 14px;
+justify-content: center;
+align-items: center;
+}
+.header-logo{
+font-family: 'Russo One', sans-serif;
+font-size: 40px;
+}
+
+.logo-box{
+font-family: 'Poppins', sans-serif;
+font-weight: 500;
+font-size: 40px;
+line-height: 0px;
+}
+
+.navigation{
+    display: flex;
+    }
+    .icon-list{
+        display: flex;
+    }
