@@ -16,48 +16,54 @@ img {
   text-decoration: none;
   display: block;
 }
-.container {
-  width: 1600px;
-  padding: 0 80px;
-  border: 1px solid red;
+
+.no-scroll {
+  overflow: hidden;
 }
+
+.container {
+  max-width: 426px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
 header {
+  position: relative;
   padding: 15px 0;
   display: flex;
   justify-content: space-between;
 }
-.navigation {
-  font-family: "Mulish";
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.25;
-  
-  text-align: center;
 
-  color: #ffffff;
-  gap: 54px;
+@media screen and (max-width: 767.98px) {
+  .navigation {
+    display: none;
+  }
+  .header-icon-list {
+    display: none;
+  }
 }
-.nav-item{
+
+.nav-item {
   position: relative;
-   color: #fff; 
-   padding: 40px 0;
-   
+  color: #fff;
+  padding: 40px 0;
 }
-.nav-item:hover:after{
-  content:'';
+.nav-item:hover:after {
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
-  background: linear-gradient(316.53deg, #26FFF2 13.2%, #326CFF 71.54%);
-border-radius: 50px;
-display: block;
-margin-top: 5px;
+  background: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
+  border-radius: 50px;
+  display: block;
+  margin-top: 5px;
 
--webkit-animation: my-animation 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both;
-	        animation: my-animation 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both;
+  -webkit-animation: my-animation 1s cubic-bezier(0.215, 0.61, 0.355, 1)
+    infinite both;
+  animation: my-animation 1s cubic-bezier(0.215, 0.61, 0.355, 1) infinite both;
 }
 .header-icon-list {
-  display: flex;
   gap: 75px;
   padding: 40px 0;
 }
@@ -71,8 +77,8 @@ margin-top: 5px;
 .logo-link {
   display: flex;
   color: #fff;
-  width: 70px;
-  height: 70px;
+  width: 48px;
+  height: 48px;
   border: 4px solid transparent;
   background: linear-gradient(#000, #000) padding-box,
     linear-gradient(to right, #326cff 0%, #26fff2 100%) border-box;
@@ -82,34 +88,25 @@ margin-top: 5px;
 }
 .header-logo {
   font-family: "Russo One", sans-serif;
-  font-size: 40px;
-
+  font-size: 24px;
 }
 
 .logo-box {
-
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 40px;
-  margin-left: 14px;
-  
+  font-size: 24px;
+  margin-left: 6px;
 }
-.logo-container{
-    display: flex;
-    align-items: center;
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
-.navigation {
-  display: flex;
-}
 .icon-list {
   display: flex;
 }
 
-
-
-
- @-webkit-keyframes my-animation {
+@-webkit-keyframes my-animation {
   0% {
     letter-spacing: -0.5em;
     opacity: 0;
@@ -134,3 +131,69 @@ margin-top: 5px;
   }
 }
 
+.menu-btn-open {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  top: 28px;
+  right: 24px;
+  border: none;
+  background-color: transparent;
+}
+.menu-btn-icon {
+  stroke: #fff;
+}
+
+.mob-menu {
+  display: none;
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 100;
+
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  padding: 80px 24px 40px 40px;
+  background: #ffffff;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.mob-menu.is-open {
+  display: flex;
+}
+
+.menu-btn-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: color var(--transition);
+  transition: background-color var(--transition), border var(--transition);
+}
+.mobil-close-btn-icon {
+  fill: currentColor;
+}
+
+.mob-menu.is-open .navigation {
+  display: block;
+}
+
+.mob-menu.is-open .nav-item {
+  color: #000;
+}
